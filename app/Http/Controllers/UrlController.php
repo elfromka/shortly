@@ -8,6 +8,18 @@ use App\Models\Url;
 class UrlController extends Controller
 {
     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $shortUrls = Url::latest()->take(6)->get();
+
+        return view('pages.home', compact('shortUrls'));
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request

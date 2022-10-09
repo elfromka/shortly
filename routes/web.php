@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.home');
-});
+Route::get('/', [UrlController::class, 'index']);
 
 Route::post('/shorten', [UrlController::class, 'store'])->name('urls.store');
 
