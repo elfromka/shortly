@@ -46,8 +46,10 @@
                             class="flex flex-col items-center justify-end flex-1 space-x-4 space-y-6 md:flex-row md:space-y-0">
                             <a href="{{ url()->current() }}/{{ $shortUrl->short }}" target="_blank"
                                 class="font-bold text-cyan">{{ url()->current() }}/{{ $shortUrl->short }}</a>
+                            <input class="invisible w-0" type="text" name="url_to_copy"
+                                value="{{ url()->current() }}/{{ $shortUrl->short }}">
                             <button
-                                class="py-2 px-8 text-white bg-cyan rounded-lg hover:bg-cyanLight duration-200 focus:outline-none">Copy</button>
+                                class="py-2 px-8 text-white bg-cyan rounded-lg hover:bg-cyanLight duration-200 focus:outline-none copy-button">Copy</button>
                         </li>
                     </ul>
                 @endforeach
